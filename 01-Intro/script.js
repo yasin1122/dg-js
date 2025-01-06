@@ -44,5 +44,3 @@ console.log(
 // Coding Challange: Return a random letter from string
 let testString = 'ThisIsATest'
 console.log(testString.charAt(Math.floor(Math.random() * testString.length)))
-
-//
