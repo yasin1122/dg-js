@@ -22,5 +22,3 @@ console.log(splitArray) // We're back to myArray
 
 console.log(myArray.concat([11, 22, 33]))
 console.log([...myArray, ...[11, 22, 33]]) // Spread Operator
-
-// Rock, Paper, Scizzors - Array & Function Refactor
