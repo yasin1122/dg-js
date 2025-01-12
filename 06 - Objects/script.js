@@ -15,3 +15,7 @@ function smash(words) {
 
 words = ['hello', 'world', 'this', 'is', 'great']
 console.log(smash(words))
+
+for (word of words) {
+  console.log(word)
+}
