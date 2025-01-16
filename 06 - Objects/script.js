@@ -23,5 +23,13 @@ for (let key in student) {
 const joe = Object.create(student)
 console.log(joe)
 
-const { studentName, passing } = student
-console.log(studentName, passing)
+const { studentName, passing, testScores } = student
+const [score1, score2, score3] = testScores
+console.log(studentName, passing, score1, score2, score3)
+
+// Deconstructing
+
+const scores = [82, 75, [55, 60]]
+const [first, second, [third, fourth]] = scores
+
+console.log(first, second, third, fourth)
