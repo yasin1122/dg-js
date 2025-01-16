@@ -29,7 +29,12 @@ class ElectricCar extends Car {
       } mile range.`
     )
   }
+
+  static message() {
+    console.log('Electric cars are good for the environment!')
+  }
 }
 
 const newCar = new ElectricCar('Tesla', 'Model Y', 2025, 300)
 newCar.toString()
+ElectricCar.message()
