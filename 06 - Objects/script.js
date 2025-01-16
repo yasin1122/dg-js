@@ -23,11 +23,12 @@ for (let key in student) {
 const joe = Object.create(student)
 console.log(joe)
 
-const { studentName, passing, testScores } = student
-const [score1, score2, score3] = testScores
-console.log(studentName, passing, score1, score2, score3)
+let { studentName, passing, testScores } = student
+testScores = [...testScores, 100]
+const [score1, score2, score3, score4] = testScores
+console.log(studentName, passing, score1, score2, score3, score4)
 
-// Deconstructing
+// Deconstructing and Spread Operator
 
 const scores = [82, 75, [55, 60]]
 const [first, second, [third, fourth]] = scores
