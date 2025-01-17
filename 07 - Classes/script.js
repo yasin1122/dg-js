@@ -38,3 +38,9 @@ class ElectricCar extends Car {
 const newCar = new ElectricCar('Tesla', 'Model Y', 2025, 300)
 newCar.toString()
 ElectricCar.message()
+
+// JSON
+const sendJSON = JSON.stringify(myCar)
+console.log(sendJSON, typeof sendJSON)
+const receiveJSON = JSON.parse(sendJSON)
+console.log(receiveJSON, typeof receiveJSON)
