@@ -12,4 +12,9 @@ sessionStorage.setItem('mySessionStore', JSON.stringify(myArray))
 const mySessionData = JSON.parse(sessionStorage.getItem('mySessionStore'))
 console.log(typeof mySessionData, myArray)
 
-localStorage.setItem('mySessionStore', JSON.stringify(myArray))
+localStorage.setItem('myLocalStore', JSON.stringify(myArray))
+
+console.log(localStorage.length, localStorage.key(0))
+
+// localStorage.removeItem('myLocalStore')
+localStorage.clear()
