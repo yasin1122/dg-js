@@ -1,36 +1,24 @@
-// Functions
+// Higher Order Functions
 
-// Methods = Built in Functions
+import { posts } from './posts.js'
 
-console.log('hello'.toUpperCase(), Math.random().toPrecision(4))
+// posts is an array
+posts.forEach(post => {
+  console.log(post)
+})
+console.clear()
 
-// Function Declaration Syntax:
+const filteredPosts = posts.filter(post => {
+  return post.userId === 1
+})
+console.log(filteredPosts)
 
-function getUserNameFromEmail(email) {
-  return email.slice(0, email.indexOf('@'))
-}
+const mappedPosts = filteredPosts.map(post => {
+  return post.id * 10
+})
+console.log(mappedPosts)
 
-console.log(getUserNameFromEmail('someRandomEmail@mail.com'))
-
-// Anonymous Function Definition
-
-const autoCompleteEmail = function (username = 'helloWorld') {
-  return username + '@mail.com'
-}
-
-console.log(autoCompleteEmail('playerOne'))
-
-// Arrow Functions
-
-const toProperCase = name => {
-  return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
-}
-
-console.log(toProperCase('JORDAN'))
-
-// var, let, and const
-let x = 5
-if (true) {
-  x = 8
-}
-console.log(x)
+const reducedPostsValue = mappedPosts.reduce((sum, post) => {
+  return sum + post
+})
+console.log(reducedPostsValue)
