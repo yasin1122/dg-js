@@ -70,3 +70,36 @@ const nextAsyncFunc = async () => {
 
 nextAsyncFunc()
 console.log(myUsers.userList) // This will be empty
+
+const getDadJoke = async () => {
+  const response = await fetch('https://icanhazdadjoke.com/', {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json'
+    }
+  })
+  const jsonJokeData = await response.json()
+
+  console.log(jsonJokeData)
+}
+
+getDadJoke()
+
+const jokeObject = {
+  id: 'A5MCY821gib',
+  joke: 'What kind of bagel can fly? A plain bagel.'
+}
+
+const postData = async jokeObj => {
+  const response = await fetch('https://httpbin.org/post', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(jokeObj)
+  })
+  const jsonResponse = await response.json()
+  console.log(jsonResponse.headers)
+}
+
+postData(jokeObject)
