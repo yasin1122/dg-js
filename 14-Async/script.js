@@ -55,3 +55,18 @@
 const myUsers = {
   userList: []
 }
+
+const asyncFunc = async () => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users')
+  const jsonUserData = await response.json()
+  return jsonUserData
+}
+
+const nextAsyncFunc = async () => {
+  const data = await asyncFunc()
+  myUsers.userList = data
+  console.log(data)
+}
+
+nextAsyncFunc()
+console.log(myUsers.userList) // This will be empty
