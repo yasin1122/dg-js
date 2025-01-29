@@ -23,7 +23,7 @@ let obj1 = {
 }
 
 let obj2 = obj1
-obj1.value = 23
+obj1.value = 22
 console.log(obj2)
 
 // Linked Lists
@@ -55,8 +55,27 @@ class LinkedList {
     this.length++
     return this
   }
+
+  pop() {
+    if (!this.head) return undefined
+    let pre = this.head
+    let temp = this.head
+    while (temp.next) {
+      pre = temp
+      temp = temp.next
+    }
+    this.tail = pre
+    this.tail.next = null
+    this.length--
+    if (this.tail === 0) {
+      this.head = null
+      this.tail = null
+    }
+    return temp
+  }
 }
 
 let myLL = new LinkedList(11)
 myLL.push(22)
+myLL.pop()
 console.log(myLL)
