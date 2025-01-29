@@ -99,12 +99,20 @@ class LinkedList {
     return temp
   }
 
-  get(index) {}
+  get(index) {
+    if (index < 0 || index >= this.length) {
+      return undefined
+    }
+    let temp = this.head
+    for (let i = 0; i < index; i++) {
+      temp = temp.next
+    }
+    return temp
+  }
 }
 
 let myLL = new LinkedList(11)
 myLL.push(22)
-myLL.pop()
 myLL.unshift(33)
-myLL.shift()
 console.log(myLL)
+console.log(myLL.get(0))
