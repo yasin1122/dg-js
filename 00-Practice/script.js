@@ -67,7 +67,7 @@ class LinkedList {
     this.tail = pre
     this.tail.next = null
     this.length--
-    if (this.tail === 0) {
+    if (this.length === 0) {
       this.head = null
       this.tail = null
     }
@@ -133,8 +133,8 @@ class LinkedList {
 
   remove(index) {
     if (index === 0) return this.shift()
-    if (index === this.length) return this.pop()
-    if (index < 0 || index > this.length) return undefined
+    if (index === this.length - 1) return this.pop()
+    if (index < 0 || index >= this.length) return undefined
     const before = this.get(index - 1)
     const temp = this.get(index)
     before.next = temp.next
@@ -142,12 +142,28 @@ class LinkedList {
     this.length--
     return temp
   }
+
+  reverse() {
+    let before = null
+    let temp = this.head
+    let after = temp.next
+    this.head = this.tail
+    this.tail = temp
+    for (let i = 0; i < this.length; i++) {
+      after = temp.next
+      temp.next = before
+      before = temp
+      temp = after
+    }
+    return this
+  }
 }
 
 let myLL = new LinkedList(11)
 myLL.push(22)
-myLL.unshift(33)
-myLL.set(0, 12)
-myLL.insert(1, 24)
+myLL.push(33)
 console.log(myLL)
-console.log(myLL.get(1))
+console.log(myLL.get(0), myLL.get(1), myLL.get(2))
+myLL.reverse()
+console.log(myLL)
+console.log(myLL.get(0), myLL.get(1), myLL.get(2))
