@@ -109,10 +109,20 @@ class LinkedList {
     }
     return temp
   }
+
+  set(index, value) {
+    let temp = this.get(index)
+    if (temp) {
+      temp.value = value
+      return true
+    }
+    return false
+  }
 }
 
 let myLL = new LinkedList(11)
 myLL.push(22)
 myLL.unshift(33)
+myLL.set(0, 12)
 console.log(myLL)
 console.log(myLL.get(0))
