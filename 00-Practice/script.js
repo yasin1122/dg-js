@@ -131,7 +131,17 @@ class LinkedList {
     return true
   }
 
-  remove(index) {}
+  remove(index) {
+    if (index === 0) return this.shift()
+    if (index === this.length) return this.pop()
+    if (index < 0 || index > this.length) return undefined
+    const before = this.get(index - 1)
+    const temp = this.get(index)
+    before.next = temp.next
+    temp.next = null
+    this.length--
+    return temp
+  }
 }
 
 let myLL = new LinkedList(11)
