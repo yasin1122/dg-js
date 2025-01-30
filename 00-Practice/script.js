@@ -157,13 +157,21 @@ class LinkedList {
     }
     return this
   }
+
+  // find middle node
+  findMiddleNode() {
+    let slow = this.head
+    let fast = this.head
+    while (fast && fast.next) {
+      slow = slow.next
+      fast = fast.next.next
+    }
+    return slow
+  }
 }
 
 let myLL = new LinkedList(11)
 myLL.push(22)
 myLL.push(33)
-console.log(myLL)
-console.log(myLL.get(0), myLL.get(1), myLL.get(2))
-myLL.reverse()
-console.log(myLL)
-console.log(myLL.get(0), myLL.get(1), myLL.get(2))
+myLL.push(44)
+console.log(myLL.findMiddleNode())
