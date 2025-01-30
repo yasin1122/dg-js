@@ -118,11 +118,26 @@ class LinkedList {
     }
     return false
   }
+
+  insert(index, value) {
+    if (index === 0) return this.unshift(value)
+    if (index === this.length) return this.push(value)
+    if (index < 0 || index > this.length) return false
+    const newNode = new Node(value)
+    const temp = this.get(index - 1)
+    newNode.next = temp.next
+    temp.next = newNode
+    this.length++
+    return true
+  }
+
+  remove(index) {}
 }
 
 let myLL = new LinkedList(11)
 myLL.push(22)
 myLL.unshift(33)
 myLL.set(0, 12)
+myLL.insert(1, 24)
 console.log(myLL)
-console.log(myLL.get(0))
+console.log(myLL.get(1))
