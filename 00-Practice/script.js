@@ -14,7 +14,6 @@ class Cookie {
 
 let cookieOne = new Cookie('green')
 cookieOne.setColor('yellow')
-console.log(cookieOne)
 
 // Pointers
 
@@ -24,7 +23,6 @@ let obj1 = {
 
 let obj2 = obj1
 obj1.value = 22
-console.log(obj2)
 
 // Linked Lists
 
@@ -182,8 +180,8 @@ class LinkedList {
   }
 }
 
-let myLL = new LinkedList(11)
-myLL.push(22)
-myLL.push(33)
-myLL.push(44)
-console.log(myLL.findMiddleNode())
+console.log([1, 2, 3].slice(0, 0))
+console.log(Array.from({ length: 10 }, (_, i) => i + 1))
+
+const testing = new Set([1, 2, 3])
+console.log(testing, [...testing])
