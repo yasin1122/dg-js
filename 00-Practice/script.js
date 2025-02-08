@@ -185,3 +185,7 @@ console.log(Array.from({ length: 10 }, (_, i) => i + 1))
 
 const testing = new Set([1, 2, 3])
 console.log(testing, [...testing])
+
+let sequence = [1, 2, 3, 4]
+sequence.sort((a, b) => b - a)
+console.log(sequence)
