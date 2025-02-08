@@ -180,4 +180,7 @@ class LinkedList {
   }
 }
 
-const testObj = { a: 1, b: 2 }
+// Rest Operator
+const testObj = { a: 1, b: 2, c: 3 }
+const { a: firstValue, ...rest } = testObj
+console.log(firstValue, rest)
