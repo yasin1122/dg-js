@@ -184,3 +184,7 @@ class LinkedList {
 const testObj = { a: 1, b: 2, c: 3 }
 const { a: firstValue, ...rest } = testObj
 console.log(firstValue, rest)
+
+// Spread Operator
+const updatedObj = { ...testObj, d: 4, b: 22 }
+console.log(updatedObj)
